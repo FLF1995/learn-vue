@@ -7,6 +7,7 @@
 <script>
 import {getLinkUrl} from '@/api/page.js'
 
+
 export default {
 	data() {
 		return {
@@ -18,7 +19,11 @@ export default {
 	},
 	methods:{
 		getLinkUrl() {
-			const data = {}
+			const data = {
+				page:1,
+				size:100,
+				state: '1'
+			}
 			getLinkUrl(data).then((res)=>{
 				console.log('res',res)
 			})

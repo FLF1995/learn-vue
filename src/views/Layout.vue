@@ -1,7 +1,10 @@
 <template>
 	<div class="layout">
 		<div class="navbar">
-			{{`今天是${new Date().getFullYear()}年${new Date().getMonth()+1}月${new Date().getDate()}日`}}
+			<div>	
+				{{`今天是${new Date().getFullYear()}年${new Date().getMonth()+1}月${new Date().getDate()}日`}}
+			</div>
+			<div @click='logout'>退出登录</div>
 		</div>
 		<div class="content-wrap">
 			<div class="sidebar">
@@ -16,15 +19,30 @@
 
 <script>
 import Sidebar from './Sidebar'
+import {getInfo} from '@/api/user.js'
+
 
 export default {
 	data() {
 		return {
-
 		}
 	},
 	components: {
 		Sidebar
+	},
+	created() {
+		this.getInfo()
+	},
+	methods:{
+		logout() {
+			this.$router.push('/login')
+			localStorage.removeItem('token')
+		},
+		getInfo() {
+			getInfo().then((res)=> {
+				console.log('res',res)
+			})
+		}
 	}
 }
 </script>
@@ -40,7 +58,7 @@ export default {
 			width:100%;
 			background: rgb(236, 191, 191);
 			display: flex;
-			justify-content: center;
+			justify-content: space-between;
 			align-items: center;
 			color: rgb(124, 122, 122);
 			font-size: 24px;

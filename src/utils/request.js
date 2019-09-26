@@ -9,7 +9,10 @@ const request = axios.create({
 })
 
 request.interceptors.request.use(function (config) {
-    // Do something before request is sent
+	let token = localStorage.getItem('token')
+	config.headers['Authorization'] = token
+	// config.headers['Content-Type'] = 'application/json;charset=UTF-8' 
+
     return config;
 }, function (error) {
 	// Do something with request error

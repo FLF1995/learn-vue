@@ -2,16 +2,26 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import PageOne from './views/pages/PageOne.vue'
+import Login from './views/login/Login.vue'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
+		path: '/',
+		name: 'home',
+		redirect:'/login',
+		component: Home
+	},
+	{
+		path: '/login',
+		name: 'login',
+		component: Login,
+		meta:{
+			keepAlive: false 
+		},
+	},
     {
       path: '/about',
       name: 'about',
@@ -22,8 +32,11 @@ export default new Router({
 	},
 	{
 		path: '/page-one',
-		// name: 'pageOne',
-		component: PageOne
-	  }
+		name: 'pageOne',
+		component: PageOne,
+		meta:{
+			keepAlive: true 
+		},
+	}
   ]
 })
