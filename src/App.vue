@@ -7,6 +7,7 @@
 
 <script>
 import Layout from './views/Layout'
+import store from './store'
 export default {
 	data() {
 		return {

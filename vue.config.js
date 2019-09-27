@@ -8,11 +8,10 @@ module.exports = {
         config.resolve.alias
             .set('assets', resolve('src/assets'))
             .set('styles', resolve('src/assets/styles'))
-    },
-
+	},
     // webpack-dev-server 相关配置 
 	devServer: {
-		port: 9001,
+		port: 9000,
 		open: true,
 		overlay: {
 		  warnings: false,
