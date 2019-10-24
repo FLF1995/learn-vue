@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import PageOne from './views/pages/PageOne.vue'
 import Login from './views/login/Login.vue'
+import Test from './views/pages/Test.vue'
 
 Vue.use(Router)
 
@@ -37,6 +38,11 @@ export default new Router({
 		meta:{
 			keepAlive: true 
 		},
+	},
+	{
+		path: '/test',
+		name: 'test',
+		component: Test
 	}
   ]
 })

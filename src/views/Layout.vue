@@ -56,11 +56,11 @@ export default {
 		.navbar {
 			height: 100px;
 			width:100%;
-			background: rgb(236, 191, 191);
+			background: rgb(41, 60, 88);
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			color: rgb(124, 122, 122);
+			color: rgb(53, 149, 167);
 			font-size: 24px;
 		}
 		.content-wrap {
@@ -68,7 +68,7 @@ export default {
 			min-height: 1080px;
 			.sidebar {
 				width:15%;
-				background: rgb(170, 123, 123);
+				background: rgb(4, 63, 82);
 			}
 			.content {
 				width: 85%;
