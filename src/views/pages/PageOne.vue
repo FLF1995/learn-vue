@@ -7,7 +7,7 @@
 			size='mini' 
 			placeholder="请输入用户名"
 		/>
-		<Button>submit</Button>
+		<Button type="primary" round @click="handleClick">submit</Button>
 	</div>
 </template>
 
@@ -34,6 +34,9 @@ export default {
 	methods:{
 		input(val) {
 			this.inputValue = val
+		},
+		handleClick() {
+			console.log('click')
 		}
 	}
 }
